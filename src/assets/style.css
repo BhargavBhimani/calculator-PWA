@@ -4,4 +4,9 @@
 
 * {
   background-color: black;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  touch-action: pan-x pan-y;
 }
