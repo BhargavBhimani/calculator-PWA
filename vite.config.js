@@ -17,36 +17,31 @@ export default defineConfig({
       manifest: {
         name: "Calculator",
         short_name: "Calc",
-        description: "Caalculator using BODMAS",
+        start_url: "./index.html",
+        description: "Calculator using BODMAS",
         display: "standalone",
         theme_color: "#ffffff",
         icons: [
           {
-            src: 'public/icons/icon-48x48.png',
+            src: '/icons-48x48.png',
             sizes: '48x48',
             type: 'image/png',
             purpose: 'any'
           },
           {
-            src: 'public/icons/icon-96x96.png',
-            sizes: '96x96',
+            src: '/android-chrome-192x192.png',
+            sizes: '192x192',
             type: 'image/png',
             purpose: 'any'
           },
           {
-            src: '/public/icons/icon-144x144.png',
+            src: '/icons-144x144.png',
             sizes: '144x144',
             type: 'image/png',
             purpose: 'any'
           },
           {
-            src: 'public/icons/icon-384x384.png',
-            sizes: '284x284',
-            type: 'image/png',
-            purpose: 'any'
-          },
-          {
-            src: 'public/icons/icon-512x512.png',
+            src: '/icon-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any'

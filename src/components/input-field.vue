@@ -16,16 +16,16 @@
           'bg-slate-600': btn.type == 'opt',
           'bg-orange-500': btn.type == '=',
         }" @click="() => {
-    if (btn.value == 'c') {
-      clearInput();
-    } else if (!btn.value) {
-      clearLast();
-    } else if (btn.type == 'num' || btn.type == 'opt') {
-      handleFunction(btn.value);
-    } else {
-      calculate();
-    }
+  if (btn.value == 'c') {
+    clearInput();
+  } else if (!btn.value) {
+    clearLast();
+  } else if (btn.type == 'num' || btn.type == 'opt') {
+    handleFunction(btn.value);
+  } else {
+    calculate();
   }
+}
   ">
         <template v-if="!btn.value">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="background-color: inherit"
