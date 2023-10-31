@@ -1,56 +1,37 @@
 <template>
   <div class="flex flex-col w-full justify-around items-center h-[100vh]">
     <div class="flex flex-col justify-center items-center w-[87vw] rounded-md">
-      <input
-        type="text"
-        @input="onKeyboardFunc"
-        v-model="inputString"
-        inputmode="none"
-        @keydown.enter="calculate"
-        id="inputField"
-        ref="myInput"
-        autofocus="true"
-        class="bg-slate-950 w-full h-20 mx-auto outline-none px-5 text-white cursor-pointer text-right text-2xl bottom-0 focus:cursor-text"
-      />
+      <input type="text" @input="onKeyboardFunc" v-model="inputString" inputmode="none" @keydown.enter="calculate"
+        id="inputField" ref="myInput" autofocus="true"
+        class="bg-slate-950 w-full h-20 mx-auto outline-none px-5 text-white cursor-pointer text-right text-2xl bottom-0 focus:cursor-text" />
       <p class="text-slate-300 text-3xl w-full flex justify-end">
         {{ result }}
       </p>
     </div>
     <div class="grid grid-cols-4 gap-5">
-      <button
-        v-for="btn in buttons"
+      <button v-for="btn in buttons"
         class="text-white outline-none w-16 sm:w-28 md:w-44 lg:w-56 h-16 text-xl font-semibold cursor-pointer rounded-full flex justify-center items-center"
         :class="{
           'bg-slate-800': btn.type == 'num',
           'bg-slate-600': btn.type == 'opt',
           'bg-orange-500': btn.type == '=',
-        }"
-        @click="
-          () => {
-            if (btn.value == 'c') {
-              clearInput();
-            } else if (!btn.value) {
-              clearLast();
-            } else if (btn.type == 'num' || btn.type == 'opt') {
-              handleFunction(btn.value);
-            } else {
-              calculate();
-            }
-          }
-        "
-      >
+        }" @click="() => {
+    if (btn.value == 'c') {
+      clearInput();
+    } else if (!btn.value) {
+      clearLast();
+    } else if (btn.type == 'num' || btn.type == 'opt') {
+      handleFunction(btn.value);
+    } else {
+      calculate();
+    }
+  }
+  ">
         <template v-if="!btn.value">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            style="background-color: inherit"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="M19 15.59L17.59 17L14 13.41L10.41 17L9 15.59L12.59 12L9 8.41L10.41 7L14 10.59L17.59 7L19 8.41L15.41 12L19 15.59M22 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7c-.69 0-1.23-.36-1.59-.89L0 12l5.41-8.12C5.77 3.35 6.31 3 7 3h15m0 2H7l-4.72 7L7 19h15V5Z"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="background-color: inherit"
+            viewBox="0 0 24 24">
+            <path fill="currentColor"
+              d="M19 15.59L17.59 17L14 13.41L10.41 17L9 15.59L12.59 12L9 8.41L10.41 7L14 10.59L17.59 7L19 8.41L15.41 12L19 15.59M22 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7c-.69 0-1.23-.36-1.59-.89L0 12l5.41-8.12C5.77 3.35 6.31 3 7 3h15m0 2H7l-4.72 7L7 19h15V5Z" />
           </svg>
         </template>
         <template v-else>
@@ -147,7 +128,7 @@ const buttons = [
     type: "num",
   },
   {
-    value: 0,
+    value: '0',
     type: "num",
   },
   {

@@ -7,6 +7,6 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
+/* body {
   touch-action: pan-x pan-y;
-}
+} */
