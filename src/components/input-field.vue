@@ -14,7 +14,7 @@
         :class="{
           'bg-slate-800': btn.type == 'num',
           'bg-slate-600': btn.type == 'opt',
-          'bg-orange-500': btn.type == '=',
+          'bg-red-500': btn.type == '=',
         }" @click="() => {
   if (btn.value == 'c') {
     clearInput();
